@@ -1,0 +1,32 @@
+
+
+                        Program Palindrome;
+
+            function EstPalindrome(mot: String): Boolean;
+            begin
+            // Condition d'arrêt : un mot vide ou un mot contenant un seul caractère est un palindrome
+               if Length(mot) <= 1 then
+                Result := True
+                                     else
+                        begin
+           // Comparer les caractères situés aux extrémités du mot
+              Result := (mot[1] = mot[Length(mot)]) and EstPalindrome(Copy(mot, 2, Length(mot) - 2));
+              end;
+                 end;
+
+                                  var
+                            motTest: String;
+
+                              begin
+                        // Exemple d'utilisation
+                          Write('Entrez un mot : ');
+                        Readln(motTest);
+
+                      // Appel de la fonction EstPalindrome
+                        if EstPalindrome(motTest) then
+                      Writeln('Le mot "', motTest, '" est un palindrome.')
+                      else
+                      Writeln('Le mot "', motTest, '" n''est pas un palindrome.');
+                                end.
+
+                                
